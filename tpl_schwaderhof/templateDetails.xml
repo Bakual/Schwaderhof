@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="template" client="site">
+	<name>Schwaderhof</name>
+	<version>1.0</version>
+	<creationDate>2015-09-14</creationDate>
+	<author>Thomas Hunziker</author>
+	<authorEmail>bakual@bakual.net</authorEmail>
+	<description>Template für schwaderhof-birrwil. Basierend auf Protostar und Grunge</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>less</folder>
+	</files>
+	<positions>
+		<position>debug</position>
+		<position>position-0</position>
+		<position>position-1</position>
+		<position>position-2</position>
+		<position>position-3</position>
+		<position>position-7</position>
+		<position>position-8</position>
+		<position>footer</position>
+	</positions>
+	<config>
+		<fields name="params">
+		</fields>
+	</config>
+</extension>
