@@ -88,9 +88,6 @@
 .thumbnail {
 	margin-bottom:9px;
 }
-.accordion-group {
-	background:#fff;
-}
 /* Site Title (if no logo) */
 .site-title {
 	font-size: 40px;
@@ -183,10 +180,6 @@ h6 { font-size: 12px; line-height: 14px; }
 .items-more,
 .content-links {
 	padding: 15px 0;
-}
-/* Breadcrumbs */
-.breadcrumb {
-	margin: 10px 0;
 }
 /* Caption fixes */
 .img_caption .left {
@@ -602,10 +595,33 @@ body {
 	border-bottom: 1px solid #cbb88e;
 	box-shadow: 0 1px #faf7ee;
 }
-.moduletable,
-.moduletable_menu {
+#aside,
+#sidebar {
+	.moduletable,
+	.moduletable_menu {
+		background-color: @moduleBackground;
+		border: 1px solid #dbd0ac;
+		border-radius: 10px;
+		padding: 10px;
+	}
+}
+header {
+	.carousel, .navigation, .breadcrum {
+		margin: auto;
+		width: 890px;
+	}
 	background-color: @moduleBackground;
-	border: 1px solid #dbd0ac;
-	border-radius: 10px;
-	padding: 10px;
+}
+.beforeheader {
+	background: url(../images/header-top.png) no-repeat;
+	width: 100%;
+	height: 11px;
+}
+/* Breadcrumbs */
+.breadcrumb {
+	margin: 10px 0;
+	background-color: transparent;
+}
+.jg_catelem_txt ul li {
+	list-style: none;
 }

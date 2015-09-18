@@ -11,7 +11,8 @@ $app = JFactory::getApplication();
 $doc = JFactory::getDocument();
 
 // Add JavaScript Frameworks
-JHtml::_('bootstrap.framework');
+JHtmlBootstrap::framework();
+JHtmlBootstrap::carousel();
 
 // Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css');
@@ -41,15 +42,8 @@ else
 <body>
 	<div class="container">
 		<div id="wrapper">
+			<div class="beforeheader"></div>
 			<header class="header" role="banner">
-				<div class="header-inner">
-					<a class="brand" href="<?php echo $this->baseurl; ?>/">
-						<span class="site-title"><?php echo $app->get('sitename'); ?></span>
-					</a>
-					<div class="header-search pull-right">
-						<jdoc:include type="modules" name="position-0" style="none" />
-					</div>
-				</div>
 				<?php if ($this->countModules('position-1')) : ?>
 					<nav class="navigation" role="navigation">
 						<div class="navbar pull-left">
@@ -64,8 +58,29 @@ else
 						</div>
 					</nav>
 				<?php endif; ?>
+				<div id="carousel" class="carousel slide">
+					<ol class="carousel-indicators">
+						<li data-target="#carousel" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel" data-slide-to="1"></li>
+						<li data-target="#carousel" data-slide-to="2"></li>
+						<li data-target="#carousel" data-slide-to="3"></li>
+						<li data-target="#carousel" data-slide-to="4"></li>
+					</ol>
+					<!-- Carousel items -->
+					<div class="carousel-inner">
+						<div class="active item"><img src="images/slides/slide1.jpg" /></div>
+						<div class="item"><img src="images/slides/slide2.jpg" /></div>
+						<div class="item"><img src="images/slides/slide3.jpg" /></div>
+						<div class="item"><img src="images/slides/slide4.jpg" /></div>
+						<div class="item"><img src="images/slides/slide5.jpg" /></div>
+					</div>
+					<!-- Carousel nav -->
+					<a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
+					<a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
+				</div>
+				<jdoc:include type="modules" name="banner" style="xhtml" />
+				<jdoc:include type="modules" name="breadcrumb" style="xhtml" />
 			</header>
-			<jdoc:include type="modules" name="banner" style="xhtml" />
 			<div class="row-fluid">
 				<?php if ($left) : ?>
 					<div id="sidebar" class="span3">
