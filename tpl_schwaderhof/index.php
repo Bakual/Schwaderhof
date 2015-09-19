@@ -46,65 +46,65 @@ else
 </head>
 <body>
 	<div class="container">
-		<div id="wrapper">
-			<div class="beforeheader"></div>
-			<header class="header" role="banner">
-				<?php if ($this->countModules('position-1')) : ?>
-					<nav class="navigation" role="navigation">
-						<div class="navbar pull-left">
-							<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</a>
+		<div id="pergament">
+			<div id="wrapper">
+				<div class="beforeheader"></div>
+				<header class="header" role="banner">
+					<?php if ($this->countModules('position-1')) : ?>
+						<nav class="navigation" role="navigation">
+							<div class="navbar pull-left">
+								<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</a>
+							</div>
+							<div class="nav-collapse">
+								<jdoc:include type="modules" name="position-1" style="none" />
+							</div>
+						</nav>
+					<?php endif; ?>
+					<div id="headerCarousel" class="carousel slide">
+						<ol class="carousel-indicators">
+							<li data-target="#headerCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#headerCarousel" data-slide-to="1"></li>
+							<li data-target="#headerCarousel" data-slide-to="2"></li>
+							<li data-target="#headerCarousel" data-slide-to="3"></li>
+							<li data-target="#headerCarousel" data-slide-to="4"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="active item"><img src="images/slides/slide1.jpg" /></div>
+							<div class="item"><img src="images/slides/slide2.jpg" /></div>
+							<div class="item"><img src="images/slides/slide3.jpg" /></div>
+							<div class="item"><img src="images/slides/slide4.jpg" /></div>
+							<div class="item"><img src="images/slides/slide5.jpg" /></div>
 						</div>
-						<div class="nav-collapse">
-							<jdoc:include type="modules" name="position-1" style="none" />
-						</div>
-					</nav>
-				<?php endif; ?>
-				<div id="headerCarousel" class="carousel slide">
-					<ol class="carousel-indicators">
-						<li data-target="#headerCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#headerCarousel" data-slide-to="1"></li>
-						<li data-target="#headerCarousel" data-slide-to="2"></li>
-						<li data-target="#headerCarousel" data-slide-to="3"></li>
-						<li data-target="#headerCarousel" data-slide-to="4"></li>
-					</ol>
-					<!-- Carousel items -->
-					<div class="carousel-inner">
-						<div class="active item"><img src="images/slides/slide1.jpg" /></div>
-						<div class="item"><img src="images/slides/slide2.jpg" /></div>
-						<div class="item"><img src="images/slides/slide3.jpg" /></div>
-						<div class="item"><img src="images/slides/slide4.jpg" /></div>
-						<div class="item"><img src="images/slides/slide5.jpg" /></div>
+						<a class="carousel-control left" href="#headerCarousel" data-slide="prev">&lsaquo;</a>
+						<a class="carousel-control right" href="#headerCarousel" data-slide="next">&rsaquo;</a>
 					</div>
-					<!-- Carousel nav -->
-					<a class="carousel-control left" href="#headerCarousel" data-slide="prev">&lsaquo;</a>
-					<a class="carousel-control right" href="#headerCarousel" data-slide="next">&rsaquo;</a>
+					<jdoc:include type="modules" name="banner" style="xhtml" />
+					<jdoc:include type="modules" name="breadcrumb" style="xhtml" />
+				</header>
+				<div class="row-fluid">
+					<?php if ($left) : ?>
+						<div id="sidebar" class="span3">
+							<div class="sidebar-nav">
+								<jdoc:include type="modules" name="position-7" style="xhtml" />
+							</div>
+						</div>
+					<?php endif; ?>
+					<main id="content" role="main" class="<?php echo $span; ?>">
+						<jdoc:include type="modules" name="position-3" style="xhtml" />
+						<jdoc:include type="message" />
+						<jdoc:include type="component" />
+						<jdoc:include type="modules" name="position-2" style="none" />
+					</main>
+					<?php if ($right) : ?>
+						<div id="aside" class="span3">
+							<jdoc:include type="modules" name="position-8" style="well" />
+						</div>
+					<?php endif; ?>
 				</div>
-				<jdoc:include type="modules" name="banner" style="xhtml" />
-				<jdoc:include type="modules" name="breadcrumb" style="xhtml" />
-			</header>
-			<div class="row-fluid">
-				<?php if ($left) : ?>
-					<div id="sidebar" class="span3">
-						<div class="sidebar-nav">
-							<jdoc:include type="modules" name="position-7" style="xhtml" />
-						</div>
-					</div>
-				<?php endif; ?>
-				<main id="content" role="main" class="<?php echo $span; ?>">
-					<jdoc:include type="modules" name="position-3" style="xhtml" />
-					<jdoc:include type="message" />
-					<jdoc:include type="component" />
-					<jdoc:include type="modules" name="position-2" style="none" />
-				</main>
-				<?php if ($right) : ?>
-					<div id="aside" class="span3">
-						<jdoc:include type="modules" name="position-8" style="well" />
-					</div>
-				<?php endif; ?>
 			</div>
 		</div>
 		<footer class="footer" role="contentinfo">

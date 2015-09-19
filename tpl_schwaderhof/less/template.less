@@ -576,14 +576,19 @@ body.modal-open {
 
 /* Schwaderhof Zeugs */
 body {
-	padding-top: 75px;
+	padding: 75px 0 50px 0;
 	background: url(../images/background.jpg) transparent;
 }
+#pergament {
+	background: url(../images/content-repeat.png) repeat-y center center;
+	float: left;
+	width: 100%;
+}
 #wrapper {
-	background: url(../images/content-top.png) no-repeat center top -10px,
-		url(../images/content-bottom.png) no-repeat center bottom -10px,
-		url(../images/content-repeat.png) repeat-y center center;
+	background: url(../images/content-top.png) no-repeat center top,
+		url(../images/content-bottom.png) no-repeat center bottom;
 	border-radius: 20px;
+	margin: -20px 0;
 	padding: 20px;
 	min-height: 640px;
 }
