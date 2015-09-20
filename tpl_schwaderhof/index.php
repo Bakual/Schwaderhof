@@ -12,12 +12,6 @@ $doc = JFactory::getDocument();
 
 // Add JavaScript Frameworks
 JHtmlBootstrap::framework();
-JHtmlBootstrap::carousel();
-$doc->addScriptDeclaration("
-	jQuery(document).ready(function($) {
-		$('.carousel').carousel('cycle')
-	});
-");
 
 // Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css');
@@ -64,24 +58,6 @@ else
 							</div>
 						</nav>
 					<?php endif; ?>
-					<div id="headerCarousel" class="carousel slide">
-						<ol class="carousel-indicators">
-							<li data-target="#headerCarousel" data-slide-to="0" class="active"></li>
-							<li data-target="#headerCarousel" data-slide-to="1"></li>
-							<li data-target="#headerCarousel" data-slide-to="2"></li>
-							<li data-target="#headerCarousel" data-slide-to="3"></li>
-							<li data-target="#headerCarousel" data-slide-to="4"></li>
-						</ol>
-						<div class="carousel-inner">
-							<div class="active item"><img src="images/slides/slide1.jpg" /></div>
-							<div class="item"><img src="images/slides/slide2.jpg" /></div>
-							<div class="item"><img src="images/slides/slide3.jpg" /></div>
-							<div class="item"><img src="images/slides/slide4.jpg" /></div>
-							<div class="item"><img src="images/slides/slide5.jpg" /></div>
-						</div>
-						<a class="carousel-control left" href="#headerCarousel" data-slide="prev">&lsaquo;</a>
-						<a class="carousel-control right" href="#headerCarousel" data-slide="next">&rsaquo;</a>
-					</div>
 					<jdoc:include type="modules" name="banner" style="xhtml" />
 					<jdoc:include type="modules" name="breadcrumb" style="xhtml" />
 				</header>
