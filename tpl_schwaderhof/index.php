@@ -43,9 +43,9 @@ else
 		<div id="pergament">
 			<div id="wrapper">
 				<div class="beforeheader"></div>
-				<header class="header" role="banner">
+				<header class="header">
 					<?php if ($this->countModules('position-1')) : ?>
-						<nav class="navigation" role="navigation">
+						<nav class="navigation">
 							<div class="navbar pull-left">
 								<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
 									<span class="icon-bar"></span>
@@ -69,7 +69,7 @@ else
 							</div>
 						</div>
 					<?php endif; ?>
-					<main id="content" role="main" class="<?php echo $span; ?>">
+					<main id="content" class="<?php echo $span; ?>">
 						<jdoc:include type="modules" name="position-3" style="xhtml" />
 						<jdoc:include type="message" />
 						<jdoc:include type="component" />
@@ -83,7 +83,7 @@ else
 				</div>
 			</div>
 		</div>
-		<footer class="footer" role="contentinfo">
+		<footer class="footer">
 				<jdoc:include type="modules" name="footer" style="none" />
 		</footer>
 	</div>
