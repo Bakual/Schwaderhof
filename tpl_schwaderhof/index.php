@@ -2,18 +2,23 @@
 /**
  * @package     Template.Schwaderhof
  *
+ * @copyright   Thomas Hunziker
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
 
-$app = JFactory::getApplication();
-$doc = JFactory::getDocument();
+use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\Helpers\Bootstrap;
+use Joomla\CMS\HTML\HTMLHelper;
 
-// Add JavaScript Frameworks
-JHtmlBootstrap::framework();
+/** @var Joomla\CMS\Document\HtmlDocument $this */
+
+$doc = Factory::getApplication()->getDocument();
 
 // Add Stylesheets
+Bootstrap::loadCss();
+HTMLHelper::stylesheet('system/joomla-fontawesome.min.css', ['relative' => true]);
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css');
 
 // Adjusting content width
@@ -22,15 +27,15 @@ $right = $this->countModules('position-8');
 
 if ($left && $right)
 {
-	$span = 'span6';
+	$span = 'col-md-6';
 }
 elseif (($left && !$right) || (!$left && $right))
 {
-	$span = 'span9';
+	$span = 'col-md-9';
 }
 else
 {
-	$span = 'span12';
+	$span = 'col-md-12';
 }
 ?>
 <!DOCTYPE html>
@@ -40,47 +45,35 @@ else
 </head>
 <body>
 	<div class="container">
-		<div id="pergament">
-			<div id="wrapper">
-				<div class="beforeheader"></div>
-				<header class="header">
-					<?php if ($this->countModules('position-1')) : ?>
-						<nav class="navigation">
-							<div class="navbar pull-left">
-								<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</a>
-							</div>
-							<div class="nav-collapse">
-								<jdoc:include type="modules" name="position-1" style="none" />
-							</div>
-						</nav>
-					<?php endif; ?>
-					<jdoc:include type="modules" name="banner" style="xhtml" />
-					<jdoc:include type="modules" name="breadcrumb" style="xhtml" />
-				</header>
-				<div class="row-fluid">
-					<?php if ($left) : ?>
-						<div id="sidebar" class="span3">
-							<div class="sidebar-nav">
-								<jdoc:include type="modules" name="position-7" style="xhtml" />
-							</div>
+		<div id="wrapper">
+			<header class="header">
+				<?php if ($this->countModules('menu', true)) : ?>
+					<div class="container-nav">
+						<jdoc:include type="modules" name="menu" style="none" />
+					</div>
+				<?php endif; ?>
+				<jdoc:include type="modules" name="banner" style="xhtml" />
+				<jdoc:include type="modules" name="breadcrumb" style="xhtml" />
+			</header>
+			<div class="row">
+				<?php if ($left) : ?>
+					<div id="sidebar" class="col-md-3">
+						<div class="sidebar-nav">
+							<jdoc:include type="modules" name="position-7" style="xhtml" />
 						</div>
-					<?php endif; ?>
-					<main id="content" class="<?php echo $span; ?>">
-						<jdoc:include type="modules" name="position-3" style="xhtml" />
-						<jdoc:include type="message" />
-						<jdoc:include type="component" />
-						<jdoc:include type="modules" name="position-2" style="none" />
-					</main>
-					<?php if ($right) : ?>
-						<div id="aside" class="span3">
-							<jdoc:include type="modules" name="position-8" style="well" />
-						</div>
-					<?php endif; ?>
-				</div>
+					</div>
+				<?php endif; ?>
+				<main id="content" class="<?php echo $span; ?>">
+					<jdoc:include type="modules" name="position-3" style="xhtml" />
+					<jdoc:include type="message" />
+					<jdoc:include type="component" />
+					<jdoc:include type="modules" name="position-2" style="none" />
+				</main>
+				<?php if ($right) : ?>
+					<div id="aside" class="col-md-3">
+						<jdoc:include type="modules" name="position-8" style="well" />
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
 		<footer class="footer">
